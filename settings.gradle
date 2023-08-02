@@ -1,0 +1,6 @@
+rootProject.name = 'TahminApp'
+include 'KullaniciService'
+include 'SehirService'
+include 'TahminService'
+include 'SkorService'
+

@@ -1,0 +1,51 @@
+ext {
+    versions = [
+            /*
+             * Bağımlılıkları versiyonlama işlemleri:
+             */
+            springBoot               : "2.7.12",
+            lombok                   : "1.18.28",
+            mapstruct                : "1.5.5.Final",
+            postgresql               : "42.6.0",
+            swaggerApi               : "1.6.15",
+            jwt                      : "4.4.0",
+            springCloud              : "3.1.8",
+            springCloudCircuitBreaker: "2.1.7",
+    ]
+
+    libs = [
+            //     -- Spring ile alakalı bağımlılıklar --
+            springBootWeb                   : "org.springframework.boot:spring-boot-starter-web:$versions.springBoot",
+            springBootDataJpa               : "org.springframework.boot:spring-boot-starter-data-jpa:$versions.springBoot",
+            springBootValidation            : "org.springframework.boot:spring-boot-starter-validation:$versions.springBoot",
+            //     -- Lombok --
+            lombok                          : "org.projectlombok:lombok:$versions.lombok",
+            //     -- Mapstruct --
+            mapstruct                       : "org.mapstruct:mapstruct:$versions.mapstruct",
+            mapstructProcessor              : "org.mapstruct:mapstruct-processor:$versions.mapstruct",
+            //     -- Swagger API -- (UI)
+            swaggerApi                      : "org.springdoc:springdoc-openapi-ui:$versions.swaggerApi",
+            //     -- PostgreSql --
+            postgresql                      : "org.postgresql:postgresql:$versions.postgresql",
+            //     -- Auth0 JWT --
+            jwt                             : "com.auth0:java-jwt:$versions.jwt",
+            //     -- OpenFeign --
+            springCloudOpenFeign            : "org.springframework.cloud:spring-cloud-starter-openfeign:$versions.springCloud",
+            //     -- Config Server Client --
+            springCloudStarterConfig        : "org.springframework.cloud:spring-cloud-starter-config:$versions.springCloud",
+            springCloudConfigServer         : "org.springframework.cloud:spring-cloud-config-server:$versions.springCloud",
+            springCloudConfigClient         : "org.springframework.cloud:spring-cloud-config-client:$versions.springCloud",
+            //      --API Gateway -- Circuit Breaker --
+            springCloudGateway              : "org.springframework.cloud:spring-cloud-starter-gateway:$versions.springCloud",
+            springCloudCircuitBreaker       : "org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j:$versions.springCloudCircuitBreaker",
+            springCloudCircuitBreakerReactor: "org.springframework.cloud:spring-cloud-starter-circuitbreaker-reactor-resilience4j:$versions.springCloudCircuitBreaker",
+            //      --Zipkin -- Sleuth
+            springCloudSleuthZipkin         : "org.springframework.cloud:spring-cloud-sleuth-zipkin:$versions.springCloud",
+            springCloudSleuth               : "org.springframework.cloud:spring-cloud-starter-sleuth:$versions.springCloud",
+            //      -- AMQP --
+            springBootAmqp                  : "org.springframework.boot:spring-boot-starter-amqp:$versions.springBoot",
+
+
+    ]
+
+}
