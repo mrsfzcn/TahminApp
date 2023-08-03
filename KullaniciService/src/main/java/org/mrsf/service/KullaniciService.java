@@ -36,4 +36,15 @@ public class KullaniciService extends ServiceManager<Kullanici, Long> {
         }
         return true;
     }
+
+    public Boolean updateAktifTahminId(Long id, Long tahminId) {
+        Optional<Kullanici> kullanici = kullaniciRepository.findById(id);
+        if (kullanici.isEmpty()){
+            throw new KullaniciServiceException(ErrorType.USER_NOT_FOUND);
+        }
+        kullanici.get().setAktifTahminId(tahminId);
+        kullanici.get().getTahminler().add(tahminId);
+        update(kullanici.get());
+        return true;
+    }
 }

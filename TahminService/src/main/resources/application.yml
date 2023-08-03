@@ -2,14 +2,12 @@ server:
   port: 9092
 
 spring:
-#  rabbitmq:
-#    host: localhost
-#    port: 5672
-#    username: user
-#    password: user
-#    sehir-exchange: sehirExchange
-#    sehir-queue: sehirQueue
-#    sehir-bindingKey: sehirBindingKey
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: user
+    password: user
+
   datasource:
     driver-class-name: org.postgresql.Driver
     username: postgres

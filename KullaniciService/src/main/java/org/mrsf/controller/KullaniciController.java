@@ -30,4 +30,10 @@ public class KullaniciController {
     public ResponseEntity<List<Kullanici>> findAll(){
         return ResponseEntity.ok(kullaniciService.findAll());
     }
+
+    @GetMapping("/updatetahmin/{id}/{tahminId}")
+    public ResponseEntity<Boolean> updateAktifTahminId(@PathVariable Long id, @PathVariable Long tahminId){
+        return ResponseEntity.ok(kullaniciService.updateAktifTahminId(id, tahminId));
+    }
 }
+

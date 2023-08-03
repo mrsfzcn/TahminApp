@@ -1,20 +1,18 @@
 server:
-  port: 9092
+  port: 9093
 
 spring:
-  #  rabbitmq:
-  #    host: localhost
-  #    port: 5672
-  #    username: user
-  #    password: user
-  #    sehir-exchange: sehirExchange
-  #    sehir-queue: sehirQueue
-  #    sehir-bindingKey: sehirBindingKey
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    username: postgres
-    password: root
-    url: jdbc:postgresql://localhost:5432/TahminDB
-  jpa:
-    hibernate:
-      ddl-auto: update
+    rabbitmq:
+      host: localhost
+      port: 5672
+      username: user
+      password: user
+
+    datasource:
+      driver-class-name: org.postgresql.Driver
+      username: postgres
+      password: root
+      url: jdbc:postgresql://localhost:5432/TahminDB
+    jpa:
+      hibernate:
+        ddl-auto: update
