@@ -4,14 +4,19 @@ import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.DirectExchange;
 import org.springframework.amqp.core.Queue;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class RabbitmqConfig {
-    private String exchange="tahmin-exchange";
-    private String queueSkor="skor-queue";
-    private String skorbindingKey="skor-key";
+
+    @Value("${rabbitmq.exchange}")
+    private String exchange;
+    @Value("${rabbitmq.skorkey}")
+    private String key;
+    @Value("${rabbitmq.skorqueue}")
+    private String queueSkor;
 
     @Bean
     public DirectExchange exchangeTahmin(){
@@ -23,7 +28,7 @@ public class RabbitmqConfig {
     }
     @Bean
     public Binding bindingSkor(final Queue skorQueue, final DirectExchange exchangeTahmin){
-        return BindingBuilder.bind(skorQueue).to(exchangeTahmin).with(skorbindingKey);
+        return BindingBuilder.bind(skorQueue).to(exchangeTahmin).with(key);
     }
 
 }

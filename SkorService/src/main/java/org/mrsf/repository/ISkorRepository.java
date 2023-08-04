@@ -10,7 +10,5 @@ import java.util.Optional;
 @Repository
 public interface ISkorRepository extends JpaRepository<Skor, Long> {
     Optional<Skor> findByUserId(Long userId);
-
-
     List<Skor> findAllByOrderBySkorDesc();
 }

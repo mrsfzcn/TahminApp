@@ -12,7 +12,7 @@ public class SkorConsumer {
 
     private final SkorService skorService;
 
-    @RabbitListener(queues = "skor-queue")
+    @RabbitListener(queues = "${rabbitmq.skorqueue}")
     public void updateSkor(SkorModel model){
         skorService.saveOrUpdateSkor(model);
     }
